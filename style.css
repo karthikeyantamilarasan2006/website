@@ -1,7 +1,8 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* Reset */
 *{
     margin:0;
     padding:0;
@@ -9,27 +10,40 @@
     font-family:'Poppins',sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#050816;
     color:white;
+    overflow-x:hidden;
 }
 
-/* Navbar */
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+}
 
 nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 80px;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    position:fixed;
-    width:100%;
+    padding:20px 8%;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
 }
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
+    font-size:30px;
+    font-weight:700;
     color:#00d9ff;
 }
 
@@ -39,57 +53,129 @@ nav ul{
 }
 
 nav ul li{
-    margin-left:30px;
+    margin-left:35px;
 }
 
 nav ul li a{
     color:white;
     text-decoration:none;
-    transition:0.3s;
+    transition:.3s;
 }
 
 nav ul li a:hover{
     color:#00d9ff;
 }
 
-/* Hero */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    height:100vh;
+    min-height:100vh;
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
-    text-align:center;
+    padding:120px 8%;
 }
 
-.hero h1{
-    font-size:70px;
+.hero-text{
+    width:55%;
+}
+
+.hero-text h3{
     color:#00d9ff;
+    font-size:22px;
 }
 
-.hero h2{
-    margin:20px 0;
+.hero-text h1{
+    font-size:65px;
+    margin:15px 0;
 }
 
-.hero p{
-    width:700px;
-    max-width:90%;
-    margin:auto;
+.hero-text h2{
+    color:#cfcfcf;
+    margin-bottom:20px;
 }
 
-button{
-    margin-top:30px;
+.hero-text p{
+    line-height:1.8;
+    color:#bdbdbd;
+    max-width:600px;
+}
+
+.buttons{
+    margin-top:35px;
+}
+
+.btn,
+.btn2{
+    display:inline-block;
+    text-decoration:none;
     padding:15px 35px;
-    border:none;
-    border-radius:30px;
+    border-radius:40px;
+    margin-right:15px;
+    transition:.3s;
+}
+
+.btn{
     background:#00d9ff;
     color:black;
-    font-size:18px;
-    cursor:pointer;
-    transition:0.3s;
+    font-weight:600;
 }
 
-button:hover{
-    transform:scale(1.05);
+.btn:hover{
     box-shadow:0 0 20px #00d9ff;
+}
+
+.btn2{
+    border:2px solid #00d9ff;
+    color:white;
+}
+
+.btn2:hover{
+    background:#00d9ff;
+    color:black;
+}
+
+.hero-image{
+    width:40%;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:350px;
+    border-radius:20px;
+    border:4px solid #00d9ff;
+    box-shadow:0 0 30px rgba(0,217,255,.5);
+}
+
+/* Background Glow */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00d9ff;
+    border-radius:50%;
+    filter:blur(180px);
+    opacity:.15;
+    top:-100px;
+    left:-100px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#7b2ff7;
+    border-radius:50%;
+    filter:blur(180px);
+    opacity:.15;
+    bottom:-100px;
+    right:-100px;
+    z-index:-1;
 }
